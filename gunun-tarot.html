@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Günün Tarot Kartı</title>
+  <style>
+    body {
+      background-color: #f5f0e6;
+      color: #3b2e1e;
+      font-family: 'Georgia', serif;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .card-container {
+      margin-top: 30px;
+    }
+
+    .tarot-img {
+      width: 200px;
+      height: 300px;
+      object-fit: contain;
+      margin-bottom: 20px;
+      border: 2px solid #3b2e1e;
+      border-radius: 10px;
+    }
+
+    .card-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .card-meaning {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <h1>Günün Tarot Kartı 🃏</h1>
+  <div class="card-container">
+    <img id="tarotImage" class="tarot-img" src="" alt="Tarot Kartı" />
+    <div class="card-name" id="cardName"></div>
+    <div class="card-meaning" id="cardMeaning"></div>
+  </div>
+
+  <script>
+    const tarotCards = [
+      {
+        name: "Güneş",
+        meaning: "Işık, mutluluk ve başarı. Bugün senin için yeni başlangıçlar ve aydınlık bir ruh hali getiriyor.",
+        img: "9dec2097316ad29d47d7fff8df89d898.jpg"
+      },
+      {
+        name: "Yıldız",
+        meaning: "Umut ve ilham. Karanlıkta bile yolunu bulacağın bir ışık var.",
+        img: "d3dcdcdcd68aebe5e130f8c16078303e.jpg"
+      },
+      {
+        name: "Dünya",
+        meaning: "Tamamlanma ve uyum. Emeklerinin karşılığını alıyorsun.",
+        img: "773c2a543954272373d28105b597c2d3.jpg"
+      },
+      {
+        name: "Güç",
+        meaning: "İçsel dayanıklılık ve cesaret. Korkuların üstesinden geliyorsun.",
+        img: "a0c6f063640f7615466993cab3982938.jpg"
+      },
+      {
+        name: "İmparatoriçe",
+        meaning: "Yaratıcılık, sevgi ve bolluk. Bugün duygusal olarak besleniyorsun.",
+        img: "58eb70172f465684719e70d5695ba304.jpg"
+      },
+      {
+        name: "Şeytan",
+        meaning: "Bağımlılıklar, saplantılar. Kendini sınırlayan zincirleri fark et.",
+        img: "b7e9cee18ccf52397736b6418402dbda.jpg"
+      },
+      {
+        name: "Kule",
+        meaning: "Ani yıkımlar ve değişimler. Kontrol edemediğin şeylerle yüzleşme zamanı.",
+        img: "8daf521bc9fc4d24ca82c1db90d07ec2.jpg"
+      },
+      {
+        name: "Ay",
+        meaning: "Belirsizlik ve illüzyon. Sezgilerine güven ama her şeye hemen inanma.",
+        img: "f2480eb0399f5f3f735e72afb27b0e3c.jpg"
+      },
+      {
+        name: "Ölüm",
+        meaning: "Bir sonun başlangıcı. Bitişlerden korkma; dönüşüm yolda.",
+        img: "ae8ec3413212f34d83703278b94c9aaf.jpg"
+      },
+      {
+        name: "Asılmış Adam",
+        meaning: "Bekleme ve farkındalık. Hayatı farklı bir açıdan görmelisin.",
+        img: "0a24ed0757a324b061df2b82b4e61144.jpg"
+      }
+    ];
+
+    const random = Math.floor(Math.random() * tarotCards.length);
+    const card = tarotCards[random];
+
+    document.getElementById("tarotImage").src = card.img;
+    document.getElementById("cardName").innerText = card.name;
+    document.getElementById("cardMeaning").innerText = card.meaning;
+  </script>
+</body>
+</html>

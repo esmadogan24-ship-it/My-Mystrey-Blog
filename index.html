@@ -1,0 +1,272 @@
+ <!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gizemli Blog - Anasayfa</title>
+  <style>
+    :root {
+      --bg-color: #fbf8f0;
+      --text-color: #5a3e1b;
+      --nav-bg: #e6d8c3;
+      --header-bg: #d8c3a5;
+      --border-color: #a9834a;
+    }
+
+    body.gece {
+      --bg-color: #1e1e1e;
+      --text-color: #f5f5f5;
+      --nav-bg: #2e2e2e;
+      --header-bg: #3c3c3c;
+      --border-color: #555;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      font-family: Georgia, serif;
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    .header {
+      background-color: var(--header-bg);
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      border-bottom: 3px solid var(--border-color);
+    }
+
+    .nav {
+      background-color: var(--nav-bg);
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-size: 18px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--text-color);
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      padding: 30px;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-size: 18px;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 230px;
+      height: 250px;
+      border: 3px solid var(--border-color);
+      border-radius: 10px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Günün Şiiri */
+    #gununSiiriKutusu {
+      position: absolute;
+      top: 130px;
+      left: 20px;
+      width: 260px;
+      padding: 20px;
+      border: 2px dashed var(--border-color);
+      border-radius: 10px;
+      background-color: #fff8e7;
+      z-index: 999;
+      display: none;
+    }
+
+    #gununSiiriKutusu h2 {
+      font-size: 18px;
+      margin-top: 0;
+      color: var(--text-color);
+    }
+
+    #gununSiiriKutusu blockquote {
+      font-style: italic;
+      font-size: 15px;
+      color: #4e371b;
+      line-height: 1.5;
+    }
+
+    #gununSiiriKutusu p {
+      text-align: right;
+      font-size: 12px;
+      color: #7a5e3d;
+    }
+
+    /* Kar tanesi (yaprak) */
+    .yaprak {
+      position: fixed;
+      top: -100px;
+      width: 30px;
+      height: auto;
+      z-index: 9999;
+      pointer-events: none;
+      animation: dusme 10s linear forwards;
+    }
+
+    @keyframes dusme {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(180deg);
+        opacity: 0;
+      }
+    }
+
+    /* Gece-Gündüz Butonu */
+    #toggle-mode {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 10000;
+      transition: transform 0.3s;
+    }
+
+    #toggle-mode:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Günün Şiiri -->
+  <div id="gununSiiriKutusu">
+    <h2>Günün Şiiri</h2>
+    <blockquote id="siirMetni"></blockquote>
+    <p>— Anonim</p>
+  </div>
+
+  <!-- Gece-Gündüz Butonu -->
+  <button id="toggle-mode">🌙</button>
+
+  <div class="header">Gizemli Blog</div>
+
+  <div class="nav">
+    <a href="index.html">Anasayfa</a>
+    <a href="siir-gonder.html">Şiir Gönder</a>
+    <a href="sarkilar.html">Şarkılar</a>
+    <a href="alintilar.html">Alıntılar</a>
+<a href="gunun-tarot.html">Tarot</a>
+
+  </div>
+
+  <div class="content">
+    <p>
+    Merhaba... Ben hayallerini mürekkebe, suskunluklarını satırlara döken bir sonbahar çocuğuyum.  
+  Kelimelerin yankısına, eski bir şarkının kalpte bıraktığı izlere,  
+  ve bazen sadece bir fincan kahvenin getirdiği ilhama inanırım.  
+  Bu blog; biraz ben, biraz düşlerim, biraz da ruhumun kıyısına çarpan hayallerle örülü.
+</p>
+    </p>
+    <p>
+       Günlüklerimi burada tutuyorum; çünkü bazı cümleler, bir günlüğün kilidinden daha derin sırlar saklar.  
+  Kedilerimle geçen sessiz akşamlar, kulağımda çalan nağmeler,  
+  içimde yankılanan sahneler ve satır aralarında kaybolduğum kitaplarla örülü bu köşe…  
+  Belki sen de burada bir satırda, bir tınıda, bir bakışta kendinden bir iz bulursun.
+</p>    </p>
+
+    <div class="gallery">
+      <img src="88975f3c-f6e6-40b1-a03a-cb3a188abae9.jpg" alt="Ben 1">
+      <img src="39aa0908-5581-4d48-a3f0-02247b14c00c.jpg" alt="Ben 2">
+      <img src="6178240e-b54c-45ab-a801-d3e6641da904.jpg" alt="Ben 3">
+      <img src="c2827d9c-4266-4838-9730-cb624f34a833.jpg" alt="Ben 4">
+    </div>
+
+    <p style="margin-top: 40px; font-style: italic; text-align: center; font-size: 14px; color: #7a5e3d;">
+      Gönderilen şiirler anonim olarak kaydedilir...
+    </p>
+  </div>
+
+  <!-- Modal (resim büyütme) -->
+  <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+    background-color:rgba(0,0,0,0.7); justify-content:center; align-items:center;">
+    <img id="modal-img" src="" style="max-width:90%; max-height:90%; border:5px solid white; border-radius:10px;">
+  </div>
+
+  <!-- Şiiri göster -->
+  <script>
+    const siir = localStorage.getItem("gununSiiri");
+    if (siir) {
+      document.getElementById("siirMetni").innerText = `"${siir}"`;
+      document.getElementById("gununSiiriKutusu").style.display = "block";
+    }
+  </script>
+
+  <!-- Modal Galeri -->
+  <script>
+    const images = document.querySelectorAll('.gallery img');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        modalImg.src = img.src;
+      });
+    });
+
+    modal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  </script>
+
+  <!-- Kar Tanesi Efekti -->
+  <script>
+    const karGorseli = "2744-fe0f.png"; // Yüklediğin kar tanesi
+
+    function karTanesiYarat() {
+      const img = document.createElement("img");
+      img.src = karGorseli;
+      img.classList.add("yaprak");
+      img.style.left = Math.random() * window.innerWidth + "px";
+      img.style.width = (20 + Math.random() * 30) + "px";
+      document.body.appendChild(img);
+      setTimeout(() => img.remove(), 10000);
+    }
+
+    let sayac = 0;
+    const karInterval = setInterval(() => {
+      karTanesiYarat();
+      sayac++;
+      if (sayac >= 30) clearInterval(karInterval);
+    }, 300);
+  </script>
+
+  <!-- Gece-Gündüz Modu -->
+  <script>
+    const btn = document.getElementById('toggle-mode');
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('gece');
+      btn.innerText = document.body.classList.contains('gece') ? '🌞' : '🌙';
+    });
+  </script>
+
+</body>
+</html>
